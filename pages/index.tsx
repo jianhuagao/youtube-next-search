@@ -75,7 +75,7 @@ const Home: NextPage = () => {
                 }}
                 className="rounded border shadow flex flex-col items-center cursor-pointer hover:shadow-lg"
               >
-                <img src={item.thumbnail.url} alt="" />
+                <img height={230} src={item.thumbnail.url} alt="" />
                 <p>{item.title}</p>
               </div>
             ))}
