@@ -9,6 +9,7 @@
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-json-view": "^1.21.3",
     "youtube-sr": "^4.3.4"
   },
   "devDependencies": {

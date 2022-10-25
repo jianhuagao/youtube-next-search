@@ -1,11 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useCallback, useState } from "react";
+import ReactJson from "react-json-view";
 import SearchRet from "../modes/searchRet";
 
 const Home: NextPage = () => {
   const [searchVal, setSearchVal] = useState("");
   const [searctRet, setSearctRet] = useState<SearchRet[]>();
+  const [viewJson, setViewJson] = useState<SearchRet>();
 
   const searchHandle = useCallback(() => {
     fetch(`${window.location.origin}/api/search?query=${searchVal}`)
@@ -26,7 +28,17 @@ const Home: NextPage = () => {
         <title>YouTube Next Search</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center relative">
+        {!!viewJson && (
+          <div
+            className="absolute left-0 top-0 w-full h-full backdrop-blur-xl bg-white/30"
+            onClick={() => {
+              setViewJson(undefined);
+            }}
+          >
+            <ReactJson src={viewJson} />
+          </div>
+        )}
         <div className="flex items-center">
           <input
             type="text"
@@ -45,11 +57,14 @@ const Home: NextPage = () => {
           </button>
         </div>
         {searctRet && (
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-4 mt-6">
             {searctRet.map((item) => (
               <div
                 key={item.id}
-                className="rounded border shadow flex flex-col items-center"
+                onClick={() => {
+                  setViewJson(item);
+                }}
+                className="rounded border shadow flex flex-col items-center cursor-pointer hover:shadow-lg"
               >
                 <img src={item.thumbnail.url} alt="" />
                 <p>{item.title}</p>
