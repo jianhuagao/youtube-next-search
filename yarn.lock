@@ -695,3 +695,8 @@ yaml@^1.10.2:
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
+
+youtube-sr@^4.3.4:
+  version "4.3.4"
+  resolved "https://registry.npmmirror.com/youtube-sr/-/youtube-sr-4.3.4.tgz#cbd2d446de2b0c43f5dd3ea5333222a327eddaf0"
+  integrity sha512-olSYcR80XigutCrePEXBX3/RJJrWfonJQj7+/ggBiWU0CzTDLE1q8+lpWTWCG0JpzhzILp/IB/Bq/glGqqr1TQ==
