@@ -1,16 +1,18 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useCallback, useState } from "react";
+import { SearchRet } from "./modes/searchRet";
 
 const Home: NextPage = () => {
   const [searchVal, setSearchVal] = useState("");
+  const [searctRet, setSearctRet] = useState<SearchRet[]>();
 
   const searchHandle = useCallback(() => {
     fetch(`${window.location.origin}/api/search?query=${searchVal}`)
       .then((res) => res.json())
       .then((data) => {
         if (!data?.data?.length) return alert("Could not fetch videos");
-        console.log(data);
+        setSearctRet(data);
       })
       .catch((e) => {
         console.log(e);
@@ -42,6 +44,19 @@ const Home: NextPage = () => {
             搜索
           </button>
         </div>
+        {searctRet && (
+          <div className="grid grid-cols-4 gap-4">
+            {searctRet.map((item) => (
+              <div
+                key={item.id}
+                className="rounded border shadow flex flex-col items-center"
+              >
+                <img src={item.thumbnail.url} alt="" />
+                <p>{item.title}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </main>
     </div>
   );
