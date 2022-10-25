@@ -35,12 +35,16 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center relative">
         {!!viewJson && (
-          <div
-            className="absolute left-0 top-0 w-full h-full backdrop-blur-xl bg-white/30"
-            onClick={() => {
-              setViewJson(undefined);
-            }}
-          >
+          <div className="absolute left-0 top-0 w-full h-full bg-white text-left">
+            <div className="text-right">
+              <button
+                onClick={() => {
+                  setViewJson(undefined);
+                }}
+              >
+                关闭
+              </button>
+            </div>
             <ReactJson src={viewJson} />
           </div>
         )}
