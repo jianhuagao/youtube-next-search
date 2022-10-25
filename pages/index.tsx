@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useCallback, useState } from "react";
-import { SearchRet } from "./modes/searchRet";
+import SearchRet from "../modes/searchRet";
 
 const Home: NextPage = () => {
   const [searchVal, setSearchVal] = useState("");

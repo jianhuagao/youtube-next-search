@@ -1,7 +1,4 @@
-/**
- * ApifoxModel
- */
-export interface SearchRet {
+interface SearchRet {
   channel: Channel;
   description: null;
   duration: number;
@@ -40,3 +37,5 @@ export interface Thumbnail {
   url: string;
   width: number;
 }
+
+export default SearchRet;
