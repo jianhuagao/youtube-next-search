@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       .then((res) => res.json())
       .then((data) => {
         if (!data?.data?.length) return alert("Could not fetch videos");
-        setSearctRet(data);
+        setSearctRet(data.data);
       })
       .catch((e) => {
         console.log(e);
