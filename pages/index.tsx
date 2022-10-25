@@ -1,8 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import { useCallback, useState } from "react";
 // import ReactJson from "react-json-view";
 import SearchRet from "../modes/searchRet";
+
+const ReactJson = dynamic(import("react-json-view"), {
+  ssr: false,
+});
 
 const Home: NextPage = () => {
   const [searchVal, setSearchVal] = useState("");
@@ -36,7 +41,7 @@ const Home: NextPage = () => {
               setViewJson(undefined);
             }}
           >
-            {/* <ReactJson src={viewJson} /> */}
+            <ReactJson src={viewJson} />
           </div>
         )}
         <div className="flex items-center">
