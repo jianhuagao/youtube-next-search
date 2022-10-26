@@ -7,8 +7,8 @@ export default async (req: any, res: any) => {
 
   const entry = Date.now();
   return res.json({
-    data: await YouTube.search(query, { type: "all" })
-      .then((x) => x.map((m) => m.toJSON()))
+    data: await YouTube.search(query, { type: "video" })
+      .then((x) => x.map((m) => ({ ...m.toJSON(), channel: m.channel })))
       .catch((e) => null),
     time: Date.now() - entry,
   });

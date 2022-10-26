@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import { useCallback, useEffect, useState } from "react";
-// import ReactJson from "react-json-view";
+import { useCallback, useState } from "react";
 import SearchRet from "../modes/searchRet";
 
 const ReactJson = dynamic(import("react-json-view"), {
@@ -12,7 +11,6 @@ const ReactJson = dynamic(import("react-json-view"), {
 const Home: NextPage = () => {
   const [searchVal, setSearchVal] = useState("");
   const [searctRet, setSearctRet] = useState<SearchRet[]>();
-  const [channelRet, setChannelRet] = useState<any>();
   const [viewJson, setViewJson] = useState<SearchRet>();
 
   const searchHandle = useCallback(() => {
@@ -27,19 +25,6 @@ const Home: NextPage = () => {
         alert("Could not fetch videos");
       });
   }, [searchVal]);
-
-  const searchChannelHandle = useCallback((name: string) => {
-    fetch(`${window.location.origin}/api/channel?query=${name}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (!data?.data?.length) return alert("Could not fetch videos");
-        setChannelRet(data.data);
-      })
-      .catch((e) => {
-        console.log(e);
-        alert("Could not fetch videos");
-      });
-  }, []);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
