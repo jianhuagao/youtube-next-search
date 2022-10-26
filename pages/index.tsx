@@ -60,7 +60,7 @@ const Home: NextPage = () => {
               </button>
             </div>
             <ReactJson src={viewJson} />
-            <ReactJson src={channelRet} />
+            {/* <ReactJson src={channelRet} /> */}
           </div>
         )}
         <div className="flex items-center">
@@ -87,7 +87,7 @@ const Home: NextPage = () => {
                 key={item.id}
                 onClick={() => {
                   setViewJson(item);
-                  searchChannelHandle(item.channel.id);
+                  // searchChannelHandle(item.channel.id);
                 }}
                 className="rounded border shadow flex flex-col items-center cursor-pointer hover:shadow-lg"
               >
