@@ -87,7 +87,7 @@ const Home: NextPage = () => {
                 key={item.id}
                 onClick={() => {
                   setViewJson(item);
-                  searchChannelHandle(item.channel.name);
+                  searchChannelHandle(item.channel.id);
                 }}
                 className="rounded border shadow flex flex-col items-center cursor-pointer hover:shadow-lg"
               >
