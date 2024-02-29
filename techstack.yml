@@ -2,7 +2,7 @@ repo_name: jianhuagao/youtube-next-search
 report_id: f09eb1cade6bcc991b7c19e9e509728f
 version: 0.1
 repo_type: Public
-timestamp: '2024-02-02T06:58:19+00:00'
+timestamp: '2024-02-29T19:51:02+00:00'
 requested_by: jianhuagao
 provider: github
 branch: main
@@ -53,7 +53,7 @@ tools:
   last_updated_by: jianhuagao
   last_updated_on: 2022-10-25 08:18:37.000000000 Z
 - name: Next.js
-  description: 'A small framework for server-rendered universal JavaScript apps '
+  description: A small framework for server-rendered universal JavaScript apps
   website_url: https://nextjs.org/
   version: 12.3.1
   open_source: true
